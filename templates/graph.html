@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Graph</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='common_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='graph_style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Carbon Footprint Over Time</h1>
+        <div class="graph-container">
+            <img src="data:image/png;base64,{{ graph_url }}" alt="Carbon Footprint Graph">
+        </div>
+        <div>
+            <a href="{{ url_for('calculate_footprint') }}" class="btn">Calculate New Footprint</a>
+            <a href="{{ url_for('history') }}" class="btn">View History</a>
+            <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+        </div>
+    </div>
+    <div class="background-animation"></div>
+</body>
+</html>

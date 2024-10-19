@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='common_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
+</head>
+<body>
+    <div class="containers">
+        {% extends "base.html" %}
+
+        {% block content %}
+        <h1>Your Carbon Footprint Result</h1>
+        <div class="result-card">
+            <p>Your estimated total carbon footprint is: <strong>{{ footprint|round(2) }} kg CO2</strong></p>
+            
+            <h2>Breakdown:</h2>
+            <ul>
+                {% for activity, amount in breakdown.items() %}
+                <li>{{ activity|capitalize }}: {{ amount|round(2) }} kg CO2</li>
+                {% endfor %}
+            </ul>
+            
+            <h2>Comparison:</h2>
+            <p>Your footprint is 
+            {% if comparison > 100 %}
+                <span class="bad">{{ comparison|round }}% higher</span>
+            {% else %}
+                <span class="good">{{ comparison|round }}% lower</span>
+            {% endif %}
+            than the average daily footprint.</p>
+        </div>
+        
+        <div class="eco-tip">
+            <h2>Eco-Friendly Tip:</h2>
+            <p>{{ eco_tip }}</p>
+        </div>
+        
+        <div>
+            <a href="{{ url_for('calculate_footprint') }}" class="btn">Calculate Again</a>
+            <a href="{{ url_for('history') }}" class="btn">View History</a>
+            <a href="{{ url_for('graph') }}" class="btn">View Graph</a>
+            <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+        </div>
+        {% endblock %}
+    </div>
+    <div class="background-animation"></div>
+</body>
+</html>
