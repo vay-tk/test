@@ -1,0 +1,9 @@
+Flask==2.1.0
+Flask-SQLAlchemy==3.0.0
+Flask-Login==0.6.0
+Werkzeug==2.2.0
+pandas==1.5.0
+matplotlib==3.5.0
+gunicorn
+SQLAlchemy==1.4.46
+numpy==1.24.4

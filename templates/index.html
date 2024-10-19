@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Calculate Carbon Footprint{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1>Carbon Footprint Calculator</h1>
+<p>Welcome, {{ current_user.username }}!</p>
+<form method="POST" class="activity-form">
+    {% for activity in activities %}
+    <div class="form-group">
+        <label for="{{ activity }}">{{ activity|capitalize }} ({{ 'km' if activity in ['car', 'bus', 'train', 'plane'] else 'kWh' if activity == 'electricity' else 'kg' }}):</label>
+        <input type="number" id="{{ activity }}" name="{{ activity }}" step="0.01" required>
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn">Calculate</button>
+</form>
+{% endblock %}

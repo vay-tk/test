@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='landing_style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+{% endblock %}
+
+{% block content %}
+<header class="hero">
+    <div class="hero-content">
+        <h1 class="title">Carbon Footprint Calculator</h1>
+        <p>Join the global movement towards a sustainable future</p>
+        <a href="{{ url_for('register') }}" class="cta-button">Get Started</a>
+    </div>
+</header>
+
+<section class="features">
+    <div class="feature">
+        <i class="fas fa-calculator"></i>
+        <h2>Easy Calculation</h2>
+        <p>Quickly measure your carbon emissions from daily activities</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-chart-line"></i>
+        <h2>Track Progress</h2>
+        <p>Monitor your carbon footprint reduction over time</p>
+    </div>
+    <div class="feature">
+        <i class="fas fa-leaf"></i>
+        <h2>Eco-Tips</h2>
+        <p>Get personalized suggestions to reduce your impact</p>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="cta-content">
+        <h2 class="cta-title">Ready to Make a Difference?</h2>
+        <p>Join thousands of others in the journey towards a sustainable future.</p>
+        <a href="{{ url_for('register') }}" class="cta-button">Sign Up Now</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
+{% endblock %}
