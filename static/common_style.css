@@ -39,12 +39,13 @@ body::before {
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+     /* background-color: rgba(255, 255, 255, 0.9); */
+     background: linear-gradient(135deg, #43a047, #1de9b6);
+     border-radius: 10px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     /* padding: 30px; */
+     margin-top: 20px;
+     margin-bottom: 20px;
 }
 
 h1, h2, h3 {
@@ -102,7 +103,7 @@ h1, h2, h3 {
 
 .navbar {
     background: linear-gradient(to right, #2c7744, #1a9e83);
-    padding: 15px 0px;
+    padding: 15px 3px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
@@ -115,7 +116,9 @@ h1, h2, h3 {
     align-items: center;
     flex-wrap: wrap;
     padding: 10px 10px;
-    background: #1a9e83;
+    /* background: #1a9e83; */
+    background: transparent;
+
 }
 
 .navbar-brand {
@@ -159,6 +162,7 @@ h1, h2, h3 {
 .main-content .container {
     background-color: transparent;
     box-shadow: none;
+    padding: 0px 20px;
 }
 
 .content-section {
