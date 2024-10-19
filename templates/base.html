@@ -9,11 +9,17 @@
     {% block extra_css %}{% endblock %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='landing_style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mobile_menu.css') }}">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
             <a href="{{ url_for('landing') }}" class="navbar-brand">Carbon Footprint Calculator</a>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
             <ul class="navbar-nav">
                 {% if current_user.is_authenticated %}
                     <li class="nav-item"><a href="{{ url_for('calculate_footprint') }}" class="nav-link">Calculate</a></li>
@@ -28,6 +34,21 @@
         </div>
     </nav>
 
+    <div class="mobile-menu-overlay">
+        <div class="close-btn">&times;</div>
+        <ul class="mobile-nav" class="wrapper">
+            {% if current_user.is_authenticated %}
+                <li class="nav-item" ><a href="{{ url_for('calculate_footprint') }}" class="nav-link">Calculate</a></li>
+                <li class="nav-item"><a href="{{ url_for('history') }}" class="nav-link">History</a></li>
+                <li class="nav-item"><a href="{{ url_for('graph') }}" class="nav-link">Graph</a></li>
+                <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Logout</a></li>
+            {% else %}
+                <li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link">Login &nbsp; &nbsp;</a></li>
+                <li class="nav-item"><a href="{{ url_for('register') }}" class="nav-link">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
     <div class="main-content">
         <div class="container">
             <div class="content-section">
@@ -41,5 +62,7 @@
     <i class="fas fa-seedling eco-icon"></i>
 
     <div class="background-animation"></div>
+
+    <script src="{{ url_for('static', filename='mobile_menu.js') }}"></script>
 </body>
 </html>

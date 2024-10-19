@@ -13,7 +13,7 @@
 
 .result-card {
     background-color: white;
-    padding: 20px;
+    padding: 80px;
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -22,8 +22,9 @@
 .eco-tip {
     background-color: #e7f3e8;
     border-left: 4px solid var(--primary-color);
-    padding: 15px;
+    padding: 20px;
     margin-top: 20px;
+    margin-bottom: 10px;
     border-radius: 0 5px 5px 0;
 }
 

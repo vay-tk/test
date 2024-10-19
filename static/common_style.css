@@ -102,11 +102,11 @@ h1, h2, h3 {
 
 .navbar {
     background: linear-gradient(to right, #2c7744, #1a9e83);
-    padding: 15px 0;
+    padding: 15px 0px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1141;
 }
 
 .navbar .container {
@@ -114,7 +114,8 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background: transparent;
+    padding: 10px 10px;
+    background: #1a9e83;
 }
 
 .navbar-brand {
@@ -146,11 +147,12 @@ h1, h2, h3 {
 }
 
 .nav-link:hover {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(111, 243, 171, 0.2);
     color: #e0e0e0;
 }
 
 .main-content {
+    z-index: -1;
     padding-top: 30px;
 }
 
@@ -167,6 +169,11 @@ h1, h2, h3 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+@media (min-width: 769px) {
+    .hamburger-menu, .mobile-menu-overlay {
+        display: none !important;
+    }
+}
 
 @media (max-width: 768px) {
     .container {
@@ -176,11 +183,15 @@ h1, h2, h3 {
     }
 
     .navbar .container {
-        flex-direction: column;
+        flex-direction: row;
+    }
+    .navbar {
+        padding: 12px 0px;
     }
 
     .navbar-brand {
-        margin-bottom: 10px;
+        font-size: 1.2rem;
+        /* margin-bottom: 10px; */
     }
 
     .navbar-nav {
@@ -189,7 +200,9 @@ h1, h2, h3 {
     }
 
     .nav-item {
-        margin: 5px 0;
+        /* width: fit-content; */
+        margin: 3px 0;
+        border: 1px solid #e6db11;
     }
 
     h1 {

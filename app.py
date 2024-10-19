@@ -104,6 +104,7 @@ def login():
 def landing():
     return render_template('landing.html')
 
+
 @app.route('/calculate', methods=['GET', 'POST'])
 @login_required
 def calculate_footprint():
